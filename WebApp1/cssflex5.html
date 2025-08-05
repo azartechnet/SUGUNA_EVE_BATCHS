@@ -1,0 +1,27 @@
+<style>
+  #main
+  {
+    width: 220px;
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+    /* flex-direction: column-reverse; */
+    flex-direction: row-reverse;
+    /* align-items: flex-start; */
+    /* align-items: flex-end; */
+    align-items: center;
+  }
+  #main div
+  {
+    flex:1;
+  }
+  #myBlueDiv
+  {
+    align-self: center;
+  }
+</style>
+<div id="main">
+    <div style="background-color: aqua;order: 3;">RED</div>
+    <div style="background-color: lightblue;">BLUE</div>
+    <div style="background-color: lightgreen;order:1">Green div</div>
+</div>
