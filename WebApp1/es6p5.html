@@ -1,0 +1,17 @@
+<h1 id="d1"></h1>
+<h3 id="d2"></h3>
+<script>
+    //creating Map
+    const f1=new Map([
+        ["name","johan"],
+        ["age",30],
+        ["city","NewYr"]
+    ])
+    let n1=f1.get("name")
+    let a1=f1.get("age")
+    let c1=f1.get("city")
+    console.log(n1,a1,c1)
+    document.getElementById("d1").innerHTML="There are"+f1.size+"Elementts in the Map"
+    //getting the size of the Map
+    document.getElementById("d2").innerHTML="The name is::"+n1+"ane the age is::"+a1;
+</script>
