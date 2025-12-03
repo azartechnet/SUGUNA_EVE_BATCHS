@@ -147,7 +147,7 @@ r1.render(<Sample/>)*/
 
 //class Component
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
   render()
   {
@@ -157,4 +157,55 @@ class Sample extends React.Component
   }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample/>)
+r1.render(<Sample/>)*/
+
+//Using onClick()
+/*function SimpleButton()
+{
+  function showMessage()
+  {
+    alert("Button was clicked")
+  }
+  return(
+    <div style={{textAlign:'center'}}>
+       <button onClick={showMessage}>ClickHere</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<SimpleButton/>)*/
+
+//Function Component with props
+
+/*function Sample(props)
+{
+  return(
+    <div>
+      <h1>Hello{props.name}{props.age}</h1>
+      <p>This is Paragraphs</p>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample name="azar" age="40"/>)*/
+
+//Component in component
+
+function Component1()
+{
+  return(
+    <div>
+      <h1>Hello</h1>
+      <p>Component1</p>
+      <Component2/>
+    </div>
+  )
+}
+function Component2()
+{
+  return(
+    <h1>This is Component2</h1>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Component1/>)
