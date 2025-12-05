@@ -191,7 +191,7 @@ r1.render(<Sample name="azar" age="40"/>)*/
 
 //Component in component
 
-function Component1()
+/*function Component1()
 {
   return(
     <div>
@@ -208,4 +208,141 @@ function Component2()
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Component1/>)
+r1.render(<Component1/>)*/
+
+//constructor using super
+
+/*class Sample extends React.Component
+{
+  constructor()
+  {
+    super();
+    this.state={name:"azar",age:30}
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>Hello,{this.state.name}</h1>
+        <p>Your age is:{this.state.age}</p>
+      </div>
+    )
+  } 
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//constructor without super
+
+/*class Sample extends React.Component
+{
+  constructor()
+  {
+    //super();
+    this.state={name:"azar",age:30}
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>Hello,{this.state.name}</h1>
+        <p>Your age is:{this.state.age}</p>
+      </div>
+    )
+  } 
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//constructor with props
+
+/*class Sample extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={name:props.name,age:props.age}
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>Hello,{this.state.name}</h1>
+        <p>Your age is:{this.state.age}</p>
+      </div>
+    )
+  } 
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample name="azar" age="30"/>)*/
+
+/*class Counter extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={count:0};
+  }
+  increment=()=>{
+    this.setState({count:this.state.count+1});
+  }
+  decrement=()=>{
+    this.setState({count:this.state.count-1});
+  }
+  render()
+  {
+    return(
+      <div style={{textAlign:'center'}}>
+        <h1>Counter:{this.state.count}</h1>
+        <button onClick={this.increment}>Increment</button>
+        <button onClick={this.decrement}>Decrement</button>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Counter/>)*/
+
+//Changing the State object
+
+/*class Counter extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={name:"azar",age:30};
+    this.handleChange=this.handleChange.bind(this);
+  }
+  handleChange()
+  {
+    this.setState({name:"khan",age:35});
+  }
+  render()
+  {
+    return(
+      <div style={{textAlign:'center'}}>
+        <h1>Name:{this.state.name}</h1>
+        <p>Age:{this.state.age}</p>
+        <button onClick={this.handleChange}>Change</button>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Counter/>)*/
+
+//React Event
+
+function Football()
+{
+  const shoot=()=>{
+    alert("Great Shot!!")
+  }
+  return(
+    <div style={{textAlign:'center'}}>
+      <button onClick={shoot}>Take the shot!!</button>
+    </div>
+  ) 
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)
