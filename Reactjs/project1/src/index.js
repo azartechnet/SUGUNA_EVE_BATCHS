@@ -333,7 +333,7 @@ r1.render(<Counter/>)*/
 
 //React Event
 
-function Football()
+/*function Football()
 {
   const shoot=()=>{
     alert("Great Shot!!")
@@ -345,4 +345,89 @@ function Football()
   ) 
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Football/>)
+r1.render(<Football/>)*/
+
+//React event based on Arguments
+
+/*function Football()
+{
+  const shoot=(a)=>{
+    alert(a)
+  }
+  return(
+    <div style={{textAlign:'center'}}>
+      <button onClick={()=>shoot("Great Shot!!")}>Take the shot!!</button>
+    </div>
+  ) 
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+
+/*function MissedGoal()
+{
+  return<h1>Missed Goal!!</h1>
+}
+function MadeGoal()
+{
+  return<h1>Made Goal!!</h1>
+}
+function Football(props)
+{
+  const isGoal=props.isGoal;
+  return(
+    <div style={{textAlign:'center'}}>
+      {isGoal ? <MadeGoal/> : <MissedGoal/>}
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football isGoal={false}/>)*/
+
+//using if else
+/*function MissedGoal()
+{
+  return<h1>Missed Goal!!</h1>
+}
+function MadeGoal()
+{
+  return<h1>Made Goal!!</h1>
+}
+function Football(props)
+{
+  const isGoal=props.isGoal;
+  let goal;
+  if(isGoal)
+  {
+    goal=<MadeGoal/>
+  }
+  else
+  {
+    goal=<MissedGoal/>
+  }
+  return(
+    <div style={{textAlign:'center'}}>
+      {goal}
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football isGoal={true}/>)*/
+
+//Event using form
+function MyForm()
+{
+  const handleSubmit=(event)=>{
+    event.preventDefault();
+    alert("Form Submitted!!")
+  }
+  return(
+    <div style={{textAlign:'center'}}>
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="Enter Name"/>
+        <input type="submit" value="Submit"/>
+      </form>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<MyForm/>)
