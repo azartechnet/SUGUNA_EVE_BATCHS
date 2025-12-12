@@ -414,7 +414,7 @@ const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Football isGoal={true}/>)*/
 
 //Event using form
-function MyForm()
+/*function MyForm()
 {
   const handleSubmit=(event)=>{
     event.preventDefault();
@@ -430,4 +430,61 @@ function MyForm()
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<MyForm/>)
+r1.render(<MyForm/>)*/
+
+//Destructuring
+/*function Welcome({name,age})
+{
+  return(
+    <div>
+      <h1>Hello,{name}</h1>
+      <p>Your age is:{age}</p>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Welcome name="azar" age="30"/>)*/
+
+//Destructuring in class component
+
+/*class Welcome extends React.Component
+{
+  constructor()
+  {
+    super();
+    this.state={name:"azar",age:30}
+  }
+  render()
+  {
+    const{name,age}=this.state;
+    return(
+      <div>
+        <h1>Hello,{name}</h1>
+        <p>Your age is:{age}</p>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Welcome/>)*/
+
+//Destructuring using arrays
+
+function Skills()
+{
+  const skills=["HTML","CSS","JavaScript","React"];
+  const [skill1,skill2,skill3,skill4]=skills;
+  return(
+    <div>
+      <h1>My Skills</h1>
+      <ul>
+        <li>{skill1}</li>
+        <li>{skill2}</li>
+        <li>{skill3}</li>
+        <li>{skill4}</li>
+      </ul>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Skills/>)
