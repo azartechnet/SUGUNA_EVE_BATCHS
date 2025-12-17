@@ -613,7 +613,7 @@ r1.render(<Profile/>)*/
 
 //useEffect
 
-function Example()
+/*function Example()
 {
   const [count,setCount]=useState(0);
   useEffect(()=>{
@@ -627,4 +627,83 @@ function Example()
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Example/>)
+r1.render(<Example/>)*/
+
+//Example 1
+/*const Example1=()=>{
+  useEffect(()=>{
+    console.log("Component Mounted")
+  },[])
+  return(
+    <h3>Hello from useEffect</h3>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Example1/>)*/
+
+//Example 2
+/*const Example2=()=>{
+  useEffect(()=>{
+    const timer=setInterval(()=>{
+      console.log("Timer is Running...")
+    },1000)
+    return()=>{
+      clearInterval(timer)
+      console.log("TimeCleared")
+    }
+  },[])}
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Example2/>)*/
+
+  //React without useContext
+
+  /*function Component1()
+  {
+    const [user,setUser]=useState("mohamed");
+    return(
+      <div>
+        <h1>UserName is::{user}</h1>
+        <button onClick={()=>setUser("azar")}>ClickHere</button>
+        <Component2 user={user}/>
+      </div>
+    )
+  }
+  function Component2(props)
+  {
+    return(
+      <div>
+        <h1>UserName is::{props.user}</h1>
+      </div>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Component1/>)*/
+
+  //React using userContext()
+
+  import { useContext,createContext } from "react";
+
+  const UserContext=createContext();
+
+  function Component1()
+  {
+    const [user,setUser]=useState("mohamed");
+    return(
+      <UserContext.Provider value={user}>
+        <h1>This is Component1 is::{user}</h1>
+        
+      </UserContext.Provider>
+    )
+  }
+  function Component2()
+  {
+    const user=useContext(UserContext);
+    return(
+      <div>
+        <h1>Component2 is:;{user}</h1>
+        <Component1/>
+      </div>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Component2/>)
