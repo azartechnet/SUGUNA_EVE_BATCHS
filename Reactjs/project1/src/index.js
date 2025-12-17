@@ -544,7 +544,7 @@ r1.render(<Counter/>)*/
 
 //Unmounting-ComponentwillUnmount
 
-class Child extends React.Component
+/*class Child extends React.Component
 {
   componentWillUnmount()
   {
@@ -557,4 +557,74 @@ class Child extends React.Component
 }
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Child/>)
+r1.render(<Child/>)*/
+
+//Hooks
+
+import { useState,useEffect } from "react";
+
+/*function Counter()
+{
+  const [count,setCount]=useState(0);
+  return(
+    <div>
+      <h1>Count:{count}</h1>
+      <button onClick={()=>setCount(count+1)}>Increment</button>
+      <button onClick={()=>setCount(count-1)}>Decrement</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Counter/>)*/
+
+//using String state
+
+/*function Welcome()
+{
+  const [name,setName]=useState("admin")
+  return(
+    <div>
+      <h2>Welcome,{name}!!!</h2>
+      <input type="text" placeholder="Enter the name" onChange={(e)=>setName(e.target.value)}/>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Welcome/>)*/
+
+//using Object state
+
+/*function Profile(){
+  const [user,setUser]=useState({name:"azar",age:25});
+  const updateAge=()=>{
+    setUser({...user,age:user.age+1})
+  }
+  return(
+    <div>
+      <p>Name:{user.name}</p>
+      <p>Age:{user.age}</p>
+      <button onClick={updateAge}>IncreaseAge</button>
+    </div>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Profile/>)*/
+
+//useEffect
+
+function Example()
+{
+  const [count,setCount]=useState(0);
+  useEffect(()=>{
+    console.log("Component Rendered or updated")
+  })
+  return(
+    <div>
+      <p>Count:{count}</p>
+      <button onClick={()=>setCount(count+1)}>Increase</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Example/>)
