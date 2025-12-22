@@ -681,7 +681,7 @@ r1.render(<Example1/>)*/
 
   //React using userContext()
 
-  import { useContext,createContext } from "react";
+  /*import { useContext,createContext } from "react";
 
   const UserContext=createContext();
 
@@ -706,4 +706,73 @@ r1.render(<Example1/>)*/
     )
   }
   const r1=ReactDOM.createRoot(document.getElementById('root'))
-  r1.render(<Component2/>)
+  r1.render(<Component2/>)*/
+
+  //useRef
+
+  /*import {useRef} from 'react';
+  function FocusInput()
+  {
+    const ir=useRef("")
+    const handleFocus=()=>{
+      ir.current.focus();
+    }
+    return(
+      <div>
+        <input type="text" ref={ir}/>
+        <button onClick={handleFocus}>Focus</button>
+      </div>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<FocusInput/>)*/
+
+  //Another Program useState
+
+  /*function UserProfile()
+  {
+    const [user,setUser]=useState({name:"mohamed",age:24,email:"azar@gmail.com"})
+    const updatedEmail=()=>{
+      setUser({...user,email:"mohamed@gmail.com"})
+    }
+    return(
+      <div>
+        <h1>Name:{user.name}</h1>
+        <h1>Age:{user.age}</h1>
+        <h1>Email:{user.email}</h1>
+        <button onClick={updatedEmail}>Update</button>
+      </div>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<UserProfile/>)*/
+
+  //useState TodoList
+
+  function Todolist()
+  {
+    const [todos,setTodos]=useState(["azar","mohamed","raja"])
+    const addTodo=()=>{
+      setTodos([...todos,"mohan"])
+    }
+    const deleteTodo=(index)=>{
+      setTodos([...todos.slice(0,index),...todos.slice(index+1)])
+    }
+    return(
+      <div>
+        <h1>TodoList</h1>
+        <ul>
+          {
+            todos.map((todo,index)=>
+            <li>
+              {index}{todo}
+              <button onClick={()=>deleteTodo(index)}>Delete</button>
+            </li>)
+          }
+        </ul>
+        <button onClick={addTodo}>Add</button>
+      </div>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Todolist/>)
