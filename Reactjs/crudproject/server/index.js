@@ -18,9 +18,21 @@ mongoose.connect('mongodb://localhost:27017/food', {
     console.error('Error connecting to MongoDB', err);
 });
 
+//insert the data
+
+app.post('/insert', async (req, res) => {
+    const {foodName,description}=req.body;
+    const food=new FoodModel({foodName,description});
+    try{
+        await food.save();
+        res.send('Data Inserted');
+    }catch(err){
+        console.error(err);
+        res.status(500).send('Error inserting data');
+    }
+});
 
 
-
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log('Server is running on port 3000');
 });
